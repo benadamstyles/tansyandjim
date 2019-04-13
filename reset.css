@@ -31,21 +31,21 @@ body {
 }
 
 body {
-  padding: 1em;
+  padding: 1rem;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  letter-spacing: 0.5em;
+  letter-spacing: 0.5rem;
   text-transform: uppercase;
 }
 
 h1,
 h2,
 h3 {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
 }
 
 ol,
