@@ -1,0 +1,25 @@
+{
+  "name": "tansyandjim",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benadamstyles/tansyandjim.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benadamstyles/tansyandjim/issues"
+  },
+  "homepage": "https://github.com/benadamstyles/tansyandjim#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}
