@@ -35,6 +35,14 @@ body {
 }
 
 h1,
+h2,
+h3,
+h4 {
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+h1,
 h2 {
   margin-bottom: 0.5em;
 }

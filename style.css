@@ -1,4 +1,8 @@
 .title {
   text-align: center;
-  letter-spacing: 0.5em;
+  margin-bottom: 2em;
+}
+
+.date {
+  text-align: center;
 }
