@@ -25,6 +25,11 @@ ul {
   font-family: sans-serif;
 }
 
+html,
+body {
+  background-color: #fffdf7;
+}
+
 body {
   padding: 1em;
 }
