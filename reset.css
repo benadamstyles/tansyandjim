@@ -25,6 +25,15 @@ ul {
   font-family: sans-serif;
 }
 
+body {
+  padding: 1em;
+}
+
+h1,
+h2 {
+  margin-bottom: 0.5em;
+}
+
 ol,
 ul {
   list-style: none;
