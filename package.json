@@ -5,8 +5,8 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "parcel index.html gallery.html",
-    "build": "parcel build index.html gallery.html",
+    "start": "parcel *.html",
+    "build": "parcel build *.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/benadamstyles/tansyandjim#readme",
   "devDependencies": {
+    "less": "^3.9.0",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-static-files-copy": "^2.0.0",
     "posthtml-extend": "^0.3.0"
