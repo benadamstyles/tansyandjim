@@ -1,4 +1,5 @@
 @import './variables.less';
+@import './mixins.less';
 
 .superscript {
   font-size: 80%;
@@ -7,7 +8,7 @@
 }
 
 header {
-  padding: 2.5rem 1rem 2rem;
+  padding: 1.8rem 0.8rem 1.6rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -22,5 +23,65 @@ header {
 }
 
 .content {
-  padding: 2rem 1rem;
+  padding: 2rem;
+
+  .menu {
+    padding: 1rem 0;
+
+    a {
+      display: block;
+      font-size: 1.2rem;
+      line-height: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid @primary;
+    }
+  }
+
+  form {
+    margin: 1rem auto;
+
+    label {
+      .header-text();
+      letter-spacing: 0.2rem;
+
+      &.checkbox-label {
+        display: block;
+        font-size: 1.1rem;
+      }
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin: 0.5rem auto;
+      background: @input;
+      border: none;
+      text-align: center;
+      font-size: 1rem;
+      font-family: @body-font;
+      color: lighten(@body, 2%);
+    }
+
+    input[type='checkbox'] {
+      width: auto;
+      margin-right: 0.6rem;
+    }
+
+    .dietary-details {
+      label {
+        display: inline-block;
+      }
+      .dietary-text-field {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+      }
+      input[type='checkbox']:checked ~ .dietary-text-field {
+        opacity: 1;
+        max-height: 100px;
+        overflow: visible;
+      }
+    }
+  }
 }

@@ -1,4 +1,5 @@
 @import './variables.less';
+@import './mixins.less';
 
 html {
   box-sizing: border-box;
@@ -36,24 +37,20 @@ body {
 
 h1,
 h2 {
-  margin: 1rem 0;
-  line-height: 1.4em;
-  text-transform: uppercase;
-  font-family: @header-font;
-  text-align: center;
+  .header-text();
 }
 
 h1 {
   font-size: 2.2rem;
   letter-spacing: 1rem;
-  color: @header;
+  color: @title;
 }
 
 h2 {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1.4rem;
   letter-spacing: 0.4rem;
-  color: @sub-header;
+  font-weight: 700;
+  color: @header;
 }
 
 p,
@@ -62,12 +59,28 @@ a {
   font-size: 1rem;
 }
 
+a {
+  color: @primary;
+
+  &:hover,
+  &:focus {
+    color: lighten(@primary, 10%);
+  }
+}
+
 ol,
 ul {
   list-style: none;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+button {
+  width: 100%;
+  padding: 0.6rem;
+  background: @primary;
+  border: none;
+  border-radius: 1px;
+  .header-text();
+  color: @background;
+  letter-spacing: 0.4rem;
+  font-size: 1.2rem;
 }
