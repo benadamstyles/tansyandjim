@@ -73,19 +73,14 @@ hr {
       &:focus {
         outline: 1px solid darken(@input, 5%);
 
-        &::-webkit-input-placeholder {
-          color: transparent;
-        }
-        &:-moz-placeholder {
-          color: transparent;
-        }
-        &::-moz-placeholder {
-          color: transparent;
-        }
-        &:-ms-input-placeholder {
+        &::placeholder {
           color: transparent;
         }
       }
+    }
+
+    input[type='text'] {
+      margin-bottom: 1.4rem;
     }
 
     input[type='checkbox'] {
@@ -100,12 +95,15 @@ hr {
       .dietary-text-field {
         opacity: 0;
         height: 0;
+        padding: 0;
         overflow: hidden;
-        transition: opacity 0.5s;
+        transition: 0.5s;
+        transition-property: opacity, padding;
       }
       input[type='checkbox']:checked ~ .dietary-text-field {
         opacity: 1;
         height: auto;
+        padding: 0.8rem;
         overflow: visible;
       }
     }
