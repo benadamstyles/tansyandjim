@@ -1,12 +1,6 @@
 @import './variables.less';
 @import './mixins.less';
 
-.superscript {
-  font-size: 80%;
-  letter-spacing: 0.3rem;
-  margin: 0;
-}
-
 header {
   padding: 1.8rem 0.8rem 1.6rem;
   background-repeat: no-repeat;
@@ -19,23 +13,37 @@ header {
 
   .details {
     padding-top: 1.5rem;
+
+    h2 {
+      font-size: 1.4rem;
+    }
   }
 }
 
-.content {
-  padding: 2rem;
+.menu {
+  padding: 2.4rem 0 0;
 
-  .menu {
-    padding: 1rem 0;
-
-    a {
-      display: block;
-      font-size: 1.2rem;
-      line-height: 2rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid @primary;
-    }
+  a {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    padding: 0.4rem 0;
   }
+}
+
+hr {
+  border: 1px solid @secondary;
+  width: 3.2rem;
+}
+
+.superscript {
+  font-size: 80%;
+  letter-spacing: 0.3rem;
+  margin: 0;
+}
+
+.content {
+  padding: 0.5rem 2rem;
 
   form {
     margin: 1rem auto;
@@ -53,19 +61,36 @@ header {
     input,
     textarea {
       width: 100%;
-      padding: 0.7rem;
+      padding: 0.8rem;
       margin: 0.5rem auto;
-      background: @input;
       border: none;
       text-align: center;
+      background: @input;
+      color: lighten(@body, 2%);
       font-size: 1rem;
       font-family: @body-font;
-      color: lighten(@body, 2%);
+
+      &:focus {
+        outline: 1px solid darken(@input, 5%);
+
+        &::-webkit-input-placeholder {
+          color: transparent;
+        }
+        &:-moz-placeholder {
+          color: transparent;
+        }
+        &::-moz-placeholder {
+          color: transparent;
+        }
+        &:-ms-input-placeholder {
+          color: transparent;
+        }
+      }
     }
 
     input[type='checkbox'] {
       width: auto;
-      margin-right: 0.6rem;
+      margin-right: 0.4rem;
     }
 
     .dietary-details {
@@ -74,14 +99,20 @@ header {
       }
       .dietary-text-field {
         opacity: 0;
-        max-height: 0;
+        height: 0;
         overflow: hidden;
+        transition: 0.5s;
       }
       input[type='checkbox']:checked ~ .dietary-text-field {
         opacity: 1;
-        max-height: 100px;
+        height: auto;
         overflow: visible;
       }
     }
+  }
+
+  iframe {
+    max-width: 100%;
+    margin-top: 1rem;
   }
 }

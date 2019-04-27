@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css?family=BenchNine:400,700|Raleway:400,600"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./reset.less" />
     <link rel="stylesheet" href="./style.less" />
     <script src="./index.js"></script>
@@ -26,17 +27,21 @@
       </div>
     </header>
 
+    <nav class="menu">
+      <a>On the Day</a>
+      <hr />
+      <a>Travel &amp; Accommodation</a>
+      <hr />
+      <a>Gallery</a>
+    </nav>
+
     <div class="content">
-      <nav class="menu">
-        <a>On the Day</a>
-        <a>Travel &amp; Accommodation</a>
-        <a>Gallery</a>
-      </nav>
-      <div>
+      <section>
         <h2>RSVP</h2>
         <form name="rsvp" method="POST" data-netlify="true">
           <label
-            >Guest 1 <input type="text" name="name" placeholder="Full Name"
+            >Guest 1
+            <input type="text" name="name" placeholder="Full Name" required
           /></label>
           <label class="checkbox-label"
             ><input type="checkbox" name="vegetarian" value="vegetarian" />
@@ -65,7 +70,11 @@
           ></textarea>
           <button type="submit">Send</button>
         </form>
+      </section>
 
+      <hr />
+
+      <section>
         <h2>Spotify Playlist</h2>
         <p>Include text about adding to wedding playlist</p>
         <iframe
@@ -76,7 +85,7 @@
           allowtransparency="true"
           allow="encrypted-media"
         ></iframe>
-      </div>
+      </section>
     </div>
   </body>
 </html>
