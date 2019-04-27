@@ -67,12 +67,8 @@ a {
   &:hover,
   &:focus {
     color: lighten(@primary, 10%);
+    cursor: pointer;
   }
-}
-
-ol,
-ul {
-  list-style: none;
 }
 
 button {
@@ -86,4 +82,12 @@ button {
   letter-spacing: 0.4rem;
   font-size: 1.2rem;
   margin: 1rem 0 0.5rem;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+    background: lighten(@primary, 10%);
+    cursor: pointer;
+  }
 }
