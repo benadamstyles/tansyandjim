@@ -1,13 +1,8 @@
 @import './variables.less';
-
-.superscript {
-  font-size: 80%;
-  letter-spacing: 0.3rem;
-  margin: 0;
-}
+@import './mixins.less';
 
 header {
-  padding: 2.5rem 1rem 2rem;
+  padding: 1.8rem 0.8rem 1.6rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -18,9 +13,104 @@ header {
 
   .details {
     padding-top: 1.5rem;
+
+    h2 {
+      font-size: 1.4rem;
+    }
   }
 }
 
+.menu {
+  padding: 2.4rem 0 0;
+
+  a {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    padding: 0.4rem 0;
+  }
+}
+
+hr {
+  border: 1px solid @secondary;
+  width: 3.2rem;
+}
+
+.superscript {
+  font-size: 80%;
+  letter-spacing: 0.3rem;
+  margin: 0;
+}
+
 .content {
-  padding: 2rem 1rem;
+  padding: 0.5rem 2rem;
+
+  form {
+    margin: 1rem auto;
+
+    label {
+      .header-text();
+      letter-spacing: 0.2rem;
+
+      &.checkbox-label {
+        display: block;
+        font-size: 1.1rem;
+      }
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem auto;
+      border: none;
+      text-align: center;
+      background: @input;
+      color: lighten(@body, 2%);
+      font-size: 1rem;
+      font-family: @body-font;
+
+      &:focus {
+        outline: 1px solid darken(@input, 5%);
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+    }
+
+    input[type='text'] {
+      margin-bottom: 1.4rem;
+    }
+
+    input[type='checkbox'] {
+      width: auto;
+      margin-right: 0.4rem;
+    }
+
+    .dietary-details {
+      label {
+        display: inline-block;
+      }
+      .dietary-text-field {
+        opacity: 0;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        transition-property: opacity, padding;
+      }
+      input[type='checkbox']:checked ~ .dietary-text-field {
+        opacity: 1;
+        height: auto;
+        padding: 0.8rem;
+        overflow: visible;
+      }
+    }
+  }
+
+  iframe {
+    max-width: 100%;
+    margin-top: 1rem;
+  }
 }
