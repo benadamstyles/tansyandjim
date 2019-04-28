@@ -5,8 +5,11 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "parcel *.html",
-    "build": "parcel build *.html",
+    "clean": "rm -rf ./dist",
+    "prestart": "npm run clean",
+    "prebuild": "npm run clean",
+    "start": "parcel src/**/*.html",
+    "build": "parcel build src/**/*.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

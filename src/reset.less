@@ -39,7 +39,8 @@ section {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   .header-text();
 }
 
@@ -56,6 +57,13 @@ h2 {
   color: @header;
 }
 
+h3 {
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 0.3rem;
+  color: @header;
+}
+
 p {
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -63,10 +71,11 @@ p {
 
 a {
   color: @primary;
+  text-decoration: none;
 
   &:hover,
   &:focus {
-    color: lighten(@primary, 10%);
+    color: @primary-select;
   }
 }
 
@@ -86,6 +95,6 @@ button {
   &:active,
   &:focus {
     outline: none;
-    background: lighten(@primary, 10%);
+    background: @primary-select;
   }
 }
