@@ -20,6 +20,10 @@ header {
     background-image: url('./images/the-day-bg.jpg');
   }
 
+  &.travel-accommodation-bg {
+    background-image: url('./images/travel-accommodation-bg.jpg');
+  }
+
   .details {
     padding-top: 1.5rem;
 
@@ -31,6 +35,7 @@ header {
 
 .menu {
   padding: 2.4rem 0 0;
+  font-weight: 600;
 
   a {
     display: block;
@@ -127,12 +132,48 @@ h3 .superscript {
     }
   }
 
-  iframe {
+  .sub-section {
+    padding: 0.2rem 0 0.65rem;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    &.hotels {
+      padding: 0.2rem 0 1.3rem;
+    }
+
+    h4 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    .item {
+      padding-bottom: 0.6rem;
+    }
+  }
+
+  iframe,
+  img {
     max-width: 100%;
     margin-top: 1rem;
   }
 
-  .timing-panel {
-    padding: 0.2rem 0 0.65rem;
+  .venue-details {
+    h4 {
+      margin: 0.4rem 0;
+    }
+    span {
+      display: block;
+      padding-bottom: 0.3rem;
+    }
+    .northern-monk-logo {
+      max-width: 5em;
+    }
+
+    iframe {
+      min-height: 450px;
+      width: 600px;
+      margin-bottom: 2rem;
+    }
   }
 }
