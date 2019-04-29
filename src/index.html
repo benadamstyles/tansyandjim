@@ -1,109 +1,78 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tansy and Jim</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=BenchNine:400,700|Raleway:400,600"
-      rel="stylesheet"
-    />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="./reset.less" />
-    <link rel="stylesheet" href="./style.less" />
-    <script defer src="./index.js"></script>
-  </head>
 
-  <body id="landing">
-    <header class="landing-bg">
-      <h1>Tansy Fall</h1>
-      <h1 class="superscript">and</h1>
-      <h1>James Robertson</h1>
-      <div class="details">
-        <h2>Saturday 16 November 2019</h2>
-        <h2>at</h2>
-        <h2>Northern Monk Brewery<br />Leeds</h2>
-      </div>
-    </header>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tansy and Jim</title>
+  <link href="https://fonts.googleapis.com/css?family=BenchNine:400,700|Raleway:400,600" rel="stylesheet" />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./reset.less" />
+  <link rel="stylesheet" href="./style.less" />
+  <script defer src="./index.js"></script>
+</head>
 
-    <nav class="menu">
-      <a class="active" href="#rsvp-top">RSVP</a>
-      <hr />
-      <a href="./ontheday.html">On the Day</a>
-      <hr />
-      <a href="./travel-accommodation.html">Travel &amp; Accommodation</a>
-      <hr />
-      <a>Gallery</a>
-    </nav>
-
-    <div class="content" id="rsvp-top">
-      <section>
-        <h2>RSVP</h2>
-        <form name="rsvp" method="POST" data-netlify="true">
-          <label
-            >Guest 1
-            <input type="text" name="name" placeholder="Full Name" required
-          /></label>
-          <label class="checkbox-label"
-            ><input type="checkbox" name="vegetarian" value="vegetarian" />
-            Vegetarian</label
-          >
-
-          <div class="dietary-details">
-            <input
-              type="checkbox"
-              name="dietary-requirements"
-              value="dietary-requirements"
-              id="dietary-requirements"
-            />
-            <label for="dietary-requirements" class="checkbox-label"
-              >Dietary Requirements</label
-            >
-            <textarea
-              name="dietary-details"
-              class="dietary-text-field"
-              placeholder="Details of your dietary requirements"
-            ></textarea>
-          </div>
-          <textarea
-            name="message"
-            placeholder="Add a message (optional)"
-          ></textarea>
-          <button type="submit">Send</button>
-        </form>
-      </section>
-
-      <hr />
-
-      <section>
-        <h2>Spotify Playlist</h2>
-        <p>Include text about adding to wedding playlist</p>
-        <iframe
-          src="https://open.spotify.com/embed/playlist/17axqRJA0sg9Bg7NE6EbtR"
-          width="300"
-          height="380"
-          frameborder="0"
-          allowtransparency="true"
-          allow="encrypted-media"
-        ></iframe>
-      </section>
+<body id="landing">
+  <header class="landing-bg">
+    <h1>Tansy Fall</h1>
+    <h1 class="superscript">and</h1>
+    <h1>James Robertson</h1>
+    <div class="details">
+      <h2>Saturday 16 November 2019</h2>
+      <h2>at</h2>
+      <h2>Northern Monk Brewery<br />Leeds</h2>
     </div>
-  </body>
+  </header>
 
-  <footer>
-    <button id="scroll" type="button">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="20"
-        viewbox="205.735 245.086 16 16"
-      >
-        <path
-          d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
-          transform="matrix(1, 0, 0, 1, 201.734573, 241.086426)"
-          style="fill: rgb(255, 255, 255);"
-        />
-      </svg>
-    </button>
-  </footer>
+  <nav class="menu">
+    <a class="active" href="#rsvp-top">RSVP</a>
+    <hr />
+    <a href="./ontheday.html">On the Day</a>
+    <hr />
+    <a href="./travel-accommodation.html">Travel &amp; Accommodation</a>
+    <hr />
+    <a>Gallery</a>
+  </nav>
+
+  <div class="content" id="rsvp-top">
+    <section>
+      <h2>RSVP</h2>
+
+      <form name="rsvp" method="POST" data-netlify="true">
+        <label>Guest 1
+          <input type="text" name="name" placeholder="Full Name" required /></label>
+        <label class="checkbox-label"><input type="checkbox" name="vegetarian" value="vegetarian" />
+          Vegetarian</label>
+        <div class="dietary-details">
+          <input type="checkbox" name="dietary-requirements" value="dietary-requirements" id="dietary-requirements" />
+          <label for="dietary-requirements" class="checkbox-label">Dietary Requirements</label>
+          <textarea name="dietary-details" class="dietary-text-field"
+            placeholder="Details of your dietary requirements"></textarea>
+        </div>
+        <button type="submit">Send</button>
+      </form>
+
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Spotify Playlist</h2>
+      <p>Include text about adding to wedding playlist</p>
+      <iframe src="https://open.spotify.com/embed/playlist/17axqRJA0sg9Bg7NE6EbtR" width="300" height="380"
+        frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </section>
+  </div>
+</body>
+
+<footer>
+  <button id="scroll" type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" height="20" viewbox="205.735 245.086 16 16">
+      <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+        transform="matrix(1, 0, 0, 1, 201.734573, 241.086426)" style="fill: rgb(255, 255, 255);" />
+    </svg>
+  </button>
+</footer>
+
 </html>
