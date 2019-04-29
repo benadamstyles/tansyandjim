@@ -1,5 +1,6 @@
 {
   "files.associations": {
-    ".posthtmlrc": "json"
+    ".posthtmlrc": "json",
+    ".htmlnanorc": "json"
   }
 }
