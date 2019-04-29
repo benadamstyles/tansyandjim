@@ -12,7 +12,7 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./reset.less" />
     <link rel="stylesheet" href="./style.less" />
-    <script src="./index.js"></script>
+    <script defer src="./index.js"></script>
   </head>
 
   <body id="landing">
@@ -28,7 +28,7 @@
     </header>
 
     <nav class="menu">
-      <a class="active" href="/">RSVP</a>
+      <a class="active" href="#rsvp-top">RSVP</a>
       <hr />
       <a href="./ontheday.html">On the Day</a>
       <hr />
@@ -37,7 +37,7 @@
       <a>Gallery</a>
     </nav>
 
-    <div class="content">
+    <div class="content" id="rsvp-top">
       <section>
         <h2>RSVP</h2>
         <form name="rsvp" method="POST" data-netlify="true">
@@ -92,8 +92,18 @@
   </body>
 
   <footer>
-    <a href="#" id="scroll">
-      <img src="./images/up-arrow.png" />
-    </a>
+    <button id="scroll" type="button">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="20"
+        viewbox="205.735 245.086 16 16"
+      >
+        <path
+          d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+          transform="matrix(1, 0, 0, 1, 201.734573, 241.086426)"
+          style="fill: rgb(255, 255, 255);"
+        />
+      </svg>
+    </button>
   </footer>
 </html>

@@ -1,6 +1,7 @@
+var scrollButton = document.getElementById('scroll')
+
 window.addEventListener('scroll', function() {
   var scrollTop = window.scrollY
-  var scrollButton = document.getElementById('scroll')
 
   if (scrollTop > 200) {
     scrollButton.classList.add('visible')
@@ -8,3 +9,12 @@ window.addEventListener('scroll', function() {
     scrollButton.classList.remove('visible')
   }
 })
+
+scrollButton.addEventListener('click', scrollToTop)
+
+function scrollToTop() {
+  window.scroll({
+    top: 0,
+    behavior: 'smooth',
+  })
+}
