@@ -12,12 +12,6 @@ header {
   background-position: center;
   background-size: cover;
 
-  .shrink-content {
-    h1 {
-      font-size: 0.1rem;
-    }
-  }
-
   &.landing-bg {
     background-image: url('./images/landing-bg-ALT.jpg');
   }
@@ -126,13 +120,7 @@ h3 .superscript {
     appearance: none;
 
     &:focus {
-      outline: none;
-    }
-
-    option {
-      &:hover {
-        background: darken(@secondary, 10%);
-      }
+      outline-color: @primary;
     }
   }
 
