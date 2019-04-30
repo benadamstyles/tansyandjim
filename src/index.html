@@ -38,18 +38,66 @@
   <div class="content" id="rsvp-top">
     <section>
       <h2>RSVP</h2>
+      <select id="guests-number">
+        <option selected>RSVP for 1 Guest</option>
+        <option>RSVP for 2 Guests</option>
+        <option>RSVP for 3 Guests</option>
+        <option>RSVP for 4 Guests</option>
+      </select>
 
       <form name="rsvp" method="POST" data-netlify="true">
-        <label>Guest 1
-          <input type="text" name="name" placeholder="Full Name" required /></label>
-        <label class="checkbox-label"><input type="checkbox" name="vegetarian" value="vegetarian" />
-          Vegetarian</label>
-        <div class="dietary-details">
-          <input type="checkbox" name="dietary-requirements" value="dietary-requirements" id="dietary-requirements" />
-          <label for="dietary-requirements" class="checkbox-label">Dietary Requirements</label>
-          <textarea name="dietary-details" class="dietary-text-field"
-            placeholder="Details of your dietary requirements"></textarea>
+
+        <div class="guest-fields active">
+          <label>Guest 1<input type="text" name="name" placeholder="Full Name" required /></label>
+          <label class="checkbox-label"><input type="checkbox" name="vegetarian" value="vegetarian" />Vegetarian</label>
+          <div class="dietary-details">
+            <input type="checkbox" name="dietary-requirements" value="dietary-requirements"
+              id="dietary-requirements-1" />
+            <label for="dietary-requirements-1" class="checkbox-label">Dietary Requirements</label>
+            <textarea name="dietary-details" placeholder="Details of your dietary requirements"
+              class="dietary-text-field"></textarea>
+          </div>
         </div>
+
+        <div class="guest-fields">
+          <hr />
+          <label>Guest 2<input type="text" name="name" placeholder="Full Name" required /></label>
+          <label class="checkbox-label"><input type="checkbox" name="vegetarian" value="vegetarian" />Vegetarian</label>
+          <div class="dietary-details">
+            <input type="checkbox" name="dietary-requirements" value="dietary-requirements"
+              id="dietary-requirements-2" />
+            <label for="dietary-requirements-2" class="checkbox-label">Dietary Requirements</label>
+            <textarea name="dietary-details" placeholder="Details of your dietary requirements"
+              class="dietary-text-field"></textarea>
+          </div>
+        </div>
+
+        <div class="guest-fields">
+          <hr />
+          <label>Guest 3<input type="text" name="name" placeholder="Full Name" required /></label>
+          <label class="checkbox-label"><input type="checkbox" name="vegetarian" value="vegetarian" />Vegetarian</label>
+          <div class="dietary-details">
+            <input type="checkbox" name="dietary-requirements" value="dietary-requirements"
+              id="dietary-requirements-3" />
+            <label for="dietary-requirements-3" class="checkbox-label">Dietary Requirements</label>
+            <textarea name="dietary-details" placeholder="Details of your dietary requirements"
+              class="dietary-text-field"></textarea>
+          </div>
+        </div>
+
+        <div class="guest-fields">
+          <hr />
+          <label>Guest 4<input type="text" name="name" placeholder="Full Name" required /></label>
+          <label class="checkbox-label"><input type="checkbox" name="vegetarian" value="vegetarian" />Vegetarian</label>
+          <div class="dietary-details">
+            <input type="checkbox" name="dietary-requirements" value="dietary-requirements"
+              id="dietary-requirements-4" />
+            <label for="dietary-requirements-4" class="checkbox-label">Dietary Requirements</label>
+            <textarea name="dietary-details" placeholder="Details of your dietary requirements"
+              class="dietary-text-field"></textarea>
+          </div>
+        </div>
+
         <button type="submit">Send</button>
       </form>
 
