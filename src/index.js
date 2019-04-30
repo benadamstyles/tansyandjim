@@ -1,4 +1,5 @@
 var scrollButton = document.getElementById('scroll')
+var guestSelect = document.getElementById('guests-number')
 
 window.addEventListener('scroll', function() {
   var scrollTop = window.scrollY
@@ -18,3 +19,16 @@ function scrollToTop() {
     behavior: 'smooth',
   })
 }
+
+guestSelect.addEventListener('change', function(event) {
+  var guestFields = Array.from(document.querySelectorAll('.guest-fields'))
+  var selected = event.currentTarget.selectedIndex
+
+  guestFields.forEach(function(guestField, index) {
+    if (index <= selected) {
+      guestField.classList.add('active')
+    } else {
+      guestField.classList.remove('active')
+    }
+  })
+})
