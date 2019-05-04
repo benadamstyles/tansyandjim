@@ -37,32 +37,34 @@ footer {
   min-height: 40px;
 
   #scroll {
-    pointer-events: none;
-    opacity: 0;
-    width: 40px;
     height: 40px;
+    width: 40px;
     left: calc(50% - 20px);
-    padding: 5px 0 0 1px;
-    position: fixed;
     bottom: 15px;
+    position: fixed;
+    padding: 5px 0;
     border-radius: 50%;
     background-color: @primary;
+    opacity: 0;
     color: @background;
-    text-align: center;
-    font-size: 1.8rem;
-    z-index: 1;
     transition: 0.5s ease;
     transition-property: opacity;
+    pointer-events: none;
+    z-index: 1;
 
     &.visible {
-      pointer-events: initial;
       opacity: 1;
+      pointer-events: initial;
+    }
+
+    &:hover,
+    &:focus {
+      background: @primary-select;
     }
 
     svg {
-      width: 100%;
-      padding: 0;
-      text-align: center;
+      width: 30px;
+      padding-top: 4px;
     }
   }
 }
@@ -79,6 +81,11 @@ footer {
 
     &.active {
       color: @primary-select;
+    }
+
+    &:focus {
+      color: @primary-select;
+      outline-color: @primary;
     }
   }
 }
@@ -141,6 +148,18 @@ h3 .superscript {
       margin-bottom: 2.2rem;
     }
 
+    label,
+    input,
+    textarea {
+      &:focus {
+        outline-color: @primary;
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+    }
+
     label {
       .header-text();
       margin: 0.5rem 0;
@@ -163,14 +182,6 @@ h3 .superscript {
       color: lighten(@body, 2%);
       font-size: 1rem;
       font-family: @body-font;
-
-      &:focus {
-        outline: 1px solid darken(@input, 5%);
-
-        &::placeholder {
-          color: transparent;
-        }
-      }
     }
 
     input[type='text'] {
