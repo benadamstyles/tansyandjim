@@ -20,15 +20,17 @@ function scrollToTop() {
   })
 }
 
-guestSelect.addEventListener('change', function(event) {
-  var guestFields = Array.from(document.querySelectorAll('.guest-fields'))
-  var selected = event.currentTarget.selectedIndex
+if (guestSelect != null) {
+  guestSelect.addEventListener('change', function(event) {
+    var guestFields = Array.from(document.querySelectorAll('.guest-fields'))
+    var selected = event.currentTarget.selectedIndex
 
-  guestFields.forEach(function(guestField, index) {
-    if (index <= selected) {
-      guestField.classList.add('active')
-    } else {
-      guestField.classList.remove('active')
-    }
+    guestFields.forEach(function(guestField, index) {
+      if (index <= selected) {
+        guestField.classList.add('active')
+      } else {
+        guestField.classList.remove('active')
+      }
+    })
   })
-})
+}

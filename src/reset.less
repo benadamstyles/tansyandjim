@@ -31,7 +31,7 @@ body {
   background-color: @background;
   color: @body;
   font-family: @body-font;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 section {
@@ -45,14 +45,14 @@ h3 {
 }
 
 h1 {
-  font-size: 2.2rem;
-  letter-spacing: 1rem;
+  font-size: 2.6rem;
+  letter-spacing: 1.2rem;
   color: @title;
 }
 
 h2 {
-  font-size: 1.6rem;
-  letter-spacing: 0.4rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.6rem;
   font-weight: 700;
   color: @header;
 }
@@ -88,7 +88,7 @@ a {
 button {
   width: 100%;
   padding: 0.6rem;
-  background: @primary;
+  background-color: @primary;
   border: none;
   border-radius: 1px;
   .header-text();
@@ -96,12 +96,12 @@ button {
   letter-spacing: 0.4rem;
   font-size: 1.2rem;
   margin: 1rem 0 0.5rem;
-  transition: background 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 
   &:hover,
   &:active,
   &:focus {
     outline: none;
-    background: @primary-select;
+    background-color: @primary-select;
   }
 }
