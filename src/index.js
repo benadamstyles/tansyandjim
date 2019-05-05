@@ -25,7 +25,7 @@ if (guestSelect) {
   guestSelect.addEventListener('change', function(event) {
     var guestFields = Array.from(document.querySelectorAll('.guest-fields'))
     var selected = event.currentTarget.selectedIndex
-    var guestNameSelector = 'input[name$="Guest Name"]'
+    var guestNameSelector = 'input[name$="Name"]'
 
     guestFields.forEach(function(guestField, index) {
       if (index <= selected) {
@@ -42,14 +42,14 @@ if (guestSelect) {
 }
 
 rsvpForm.addEventListener('change', function(event) {
-  var dietaryRequirementSelected = event.target
+  var changedElement = event.target
 
-  if (dietaryRequirementSelected.className.includes('dietary-checkbox')) {
-    var textField = dietaryRequirementSelected.parentElement.getElementsByClassName(
+  if (changedElement.className.includes('dietary-checkbox')) {
+    var textField = changedElement.parentElement.getElementsByClassName(
       'dietary-text-field'
     )[0]
 
-    if (dietaryRequirementSelected.checked) {
+    if (changedElement.checked) {
       textField.setAttribute('required', 'required')
     } else {
       textField.removeAttribute('required')
