@@ -21,21 +21,50 @@ function scrollToTop() {
   })
 }
 
+var guestNameInputSelector = 'input[name$="Name"]'
+
+function resetGuestSection(guestSection) {
+  var allRequired = Array.from(guestSection.querySelectorAll('[required]'))
+
+  var checkboxes = Array.from(
+    guestSection.querySelectorAll('input[type=checkbox]')
+  )
+
+  var textInputs = Array.from(
+    guestSection.querySelectorAll('input[type=text], textarea')
+  )
+
+  guestSection.classList.remove('active')
+
+  // Remove all required attributes
+  allRequired.forEach(function(requiredInput) {
+    requiredInput.removeAttribute('required')
+  })
+
+  // Uncheck all checkboxes
+  checkboxes.forEach(function(checkbox) {
+    checkbox.checked = false
+  })
+
+  // Remove all text input values
+  textInputs.forEach(function(input) {
+    input.value = ''
+  })
+}
+
 if (guestSelect) {
   guestSelect.addEventListener('change', function(event) {
-    var guestFields = Array.from(document.querySelectorAll('.guest-fields'))
+    var guestSections = Array.from(document.querySelectorAll('.guest-fields'))
     var selected = event.currentTarget.selectedIndex
-    var guestNameSelector = 'input[name$="Name"]'
 
-    guestFields.forEach(function(guestField, index) {
+    guestSections.forEach(function(guestSection, index) {
       if (index <= selected) {
-        guestField.classList.add('active')
-        guestField
-          .querySelector(guestNameSelector)
+        guestSection.classList.add('active')
+        guestSection
+          .querySelector(guestNameInputSelector)
           .setAttribute('required', 'required')
       } else {
-        guestField.classList.remove('active')
-        guestField.querySelector(guestNameSelector).removeAttribute('required')
+        resetGuestSection(guestSection)
       }
     })
   })
