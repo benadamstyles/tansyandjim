@@ -84,18 +84,18 @@ footer {
   font-weight: 600;
 
   a {
-    display: block;
+    width: auto;
+    margin: 0 auto;
+    padding: 0.4rem 2rem;
     font-size: 1.3rem;
     line-height: 2;
-    padding: 0.4rem 0;
 
     &.active {
       color: @primary-select;
     }
 
     &:focus {
-      color: @primary-select;
-      outline-color: @primary;
+      .outline-style();
     }
   }
 }
@@ -119,6 +119,18 @@ h3 .superscript {
 .content {
   padding: 0.5rem 2rem;
 
+  #javascript-disabled p {
+    margin-top: 2rem;
+    color: @warning;
+    font-size: 1.1rem;
+
+    span {
+      width: 100%;
+      display: block;
+      font-size: 2rem;
+    }
+  }
+
   select {
     max-width: 15rem;
     margin-bottom: 1rem;
@@ -137,13 +149,18 @@ h3 .superscript {
     appearance: none;
 
     &:focus {
-      outline-color: @primary;
+      .outline-style();
     }
   }
 
   form {
     margin: 1rem auto;
     max-width: 450px;
+
+    .bot-field {
+      visibility: hidden;
+      height: 1px;
+    }
 
     .guest-fields {
       display: none;
@@ -162,7 +179,7 @@ h3 .superscript {
     input,
     textarea {
       &:focus {
-        outline-color: @primary;
+        .outline-style();
 
         &::placeholder {
           color: transparent;
@@ -200,7 +217,7 @@ h3 .superscript {
     }
 
     input[type='checkbox'] {
-      width: auto;
+      width: 1rem;
       margin-right: 0.4rem;
     }
 
