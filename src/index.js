@@ -20,7 +20,7 @@ function scrollToTop() {
   })
 }
 
-if (guestSelect != null) {
+if (guestSelect) {
   guestSelect.addEventListener('change', function(event) {
     var guestFields = Array.from(document.querySelectorAll('.guest-fields'))
     var selected = event.currentTarget.selectedIndex
