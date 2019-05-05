@@ -1,0 +1,41 @@
+@import './variables.less';
+@import './mixins.less';
+
+@media screen and (min-width: 768px) {
+  .menu {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2.4rem 2.4rem 0;
+
+    a {
+      font-size: 1.2rem;
+    }
+
+    hr {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .menu {
+    justify-content: center;
+
+    a {
+      padding: 1rem 2.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .content {
+    form {
+      max-width: 480px;
+    }
+
+    iframe {
+      width: 480px;
+      height: 585px;
+    }
+  }
+}

@@ -24,11 +24,19 @@ header {
     background-image: url('./images/travel-accommodation-bg.jpg');
   }
 
+  h1 {
+    padding-left: 1.2rem;
+
+    &.superscript {
+      padding-left: 0;
+    }
+  }
+
   .details {
     padding-top: 1.5rem;
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
     }
   }
 }
@@ -59,7 +67,7 @@ footer {
 
     &:hover,
     &:focus {
-      background: @primary-select;
+      background-color: @primary-select;
     }
 
     svg {
@@ -70,12 +78,14 @@ footer {
 }
 
 .menu {
+  display: flex;
+  flex-direction: column;
   padding: 2.4rem 0 0;
   font-weight: 600;
 
   a {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 2;
     padding: 0.4rem 0;
 
@@ -115,7 +125,7 @@ h3 .superscript {
     padding: 0.75rem 2.5rem 0.75rem 1rem;
     border: none;
     border-radius: 1px;
-    background: lighten(@secondary, 3%);
+    background-color: lighten(@secondary, 3%);
     background-image: url('./images/chevron-down.svg');
     background-position: right 0.75rem top 50%, 0 0;
     background-repeat: no-repeat;
@@ -163,6 +173,7 @@ h3 .superscript {
     label {
       .header-text();
       margin: 0.5rem 0;
+      font-size: 1.1rem;
       letter-spacing: 0.2rem;
 
       &.checkbox-label {
@@ -178,7 +189,7 @@ h3 .superscript {
       margin: 0.5rem auto;
       border: none;
       text-align: center;
-      background: @input;
+      background-color: @input;
       color: lighten(@body, 2%);
       font-size: 1rem;
       font-family: @body-font;
@@ -266,3 +277,5 @@ h3 .superscript {
     }
   }
 }
+
+@import './responsive.less';
