@@ -49,12 +49,10 @@ function DragDrop() {
 
 function UploadContainer() {
   return (
-    <section>
-      <div className="upload-container">
-        <UploadButton />
-        <OrText />
-        <DragDrop />
-      </div>
+    <section className="upload-container">
+      <UploadButton />
+      <OrText />
+      <DragDrop />
     </section>
   )
 }

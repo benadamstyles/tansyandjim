@@ -18,7 +18,24 @@
     }
   }
 
-  #gallery-app .images-container {
+  #gallery-app {
+    .upload-container {
+      .drop-container {
+        display: block;
+        width: 400px;
+        height: 200px;
+        margin: 0 auto;
+        border: 2px dotted @primary-select;
+      }
+      p {
+        display: block;
+      }
+      .drag-hover {
+        background-color: @secondary;
+      }
+    }
+  }
+  .images-container {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -49,7 +66,13 @@
     }
   }
 
-  #gallery-app .images-container {
-    grid-template-columns: 1fr 1fr 1fr;
+  #gallery-app {
+    .upload-container .drop-container {
+      display: block;
+      width: 550px;
+    }
+    .images-container {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 }
