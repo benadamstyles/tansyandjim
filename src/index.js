@@ -70,18 +70,20 @@ if (guestSelect) {
   })
 }
 
-rsvpForm.addEventListener('change', function(event) {
-  var changedElement = event.target
+if (rsvpForm) {
+  rsvpForm.addEventListener('change', function(event) {
+    var changedElement = event.target
 
-  if (changedElement.className.includes('dietary-checkbox')) {
-    var textField = changedElement.parentElement.getElementsByClassName(
-      'dietary-text-field'
-    )[0]
+    if (changedElement.className.includes('dietary-checkbox')) {
+      var textField = changedElement.parentElement.getElementsByClassName(
+        'dietary-text-field'
+      )[0]
 
-    if (changedElement.checked) {
-      textField.setAttribute('required', 'required')
-    } else {
-      textField.removeAttribute('required')
+      if (changedElement.checked) {
+        textField.setAttribute('required', 'required')
+      } else {
+        textField.removeAttribute('required')
+      }
     }
-  }
-})
+  })
+}

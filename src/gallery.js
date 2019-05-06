@@ -11,39 +11,72 @@ function OrText() {
 }
 
 function DragDrop() {
-  return <div className="drop-container" />
-}
+  var [dragHoverClassName, setDragClassNameFunction] = React.useState(
+    'no-drag-hover'
+  )
 
-function UploadContainer() {
+  function drag(event) {
+    event.preventDefault()
+  }
+
+  function drop(event) {
+    event.preventDefault()
+    setDragClassNameFunction('no-drag-hover')
+    console.log(event.dataTransfer.files)
+  }
+
+  function enter(event) {
+    event.preventDefault()
+    setDragClassNameFunction('drag-hover')
+  }
+
+  function leave(event) {
+    event.preventDefault()
+    setDragClassNameFunction('no-drag-hover')
+  }
+
   return (
-    <div className="upload-container">
-      <UploadButton />
-      <OrText />
-      <DragDrop />
+    <div
+      className={'drop-container ' + dragHoverClassName}
+      onDragOver={drag}
+      onDrop={drop}
+      onDragEnter={enter}
+      onDragLeave={leave}>
+      <p>Drag and drop image here</p>
     </div>
   )
 }
 
+function UploadContainer() {
+  return (
+    <section>
+      <div className="upload-container">
+        <UploadButton />
+        <OrText />
+        <DragDrop />
+      </div>
+    </section>
+  )
+}
+
 // Image Gallery
+function SeparatorLine() {
+  return <hr />
+}
+
 function Image() {
   return <img src="" alt="" />
 }
 
 function ImagesContainer() {
   return (
-    <div className="images-container">
-      <Image />
-      <Image />
-      <Image />
-    </div>
-  )
-}
-
-function GalleryGrid() {
-  return (
-    <div className="gallery-grid">
-      <ImagesContainer />
-    </div>
+    <section>
+      <div className="images-container">
+        <Image />
+        <Image />
+        <Image />
+      </div>
+    </section>
   )
 }
 
@@ -51,7 +84,8 @@ function Gallery() {
   return (
     <>
       <UploadContainer />
-      <GalleryGrid />
+      <SeparatorLine />
+      <ImagesContainer />
     </>
   )
 }
