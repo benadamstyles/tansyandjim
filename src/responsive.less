@@ -17,7 +17,16 @@
       display: none;
     }
   }
+}
 
+@media screen and (min-width: 961px) {
+  .menu {
+    justify-content: center;
+
+    a {
+      padding: 1rem 2.2rem;
+    }
+  }
   #gallery-app {
     .upload-container {
       .drop-container {
@@ -34,18 +43,8 @@
         background-color: @secondary;
       }
     }
-  }
-  .images-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .menu {
-    justify-content: center;
-
-    a {
-      padding: 1rem 2.2rem;
+    .images-container {
+      grid-template-columns: 1fr 1fr;
     }
   }
 }
