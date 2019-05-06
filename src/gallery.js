@@ -5,7 +5,7 @@ import UploadButton from './modules/UploadButton'
 import {retrieve} from './modules/upload'
 
 function OrText() {
-  return <p>Or</p>
+  return <h3 className="superscript">Or</h3>
 }
 
 function UploadContainer() {

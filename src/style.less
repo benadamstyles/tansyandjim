@@ -225,6 +225,7 @@ h3 .superscript {
       label {
         display: inline-block;
       }
+
       .dietary-text-field {
         opacity: 0;
         height: 0;
@@ -233,6 +234,7 @@ h3 .superscript {
         transition: 0.5s;
         transition-property: opacity, padding;
       }
+
       input[type='checkbox']:checked ~ .dietary-text-field {
         opacity: 1;
         height: auto;
@@ -277,16 +279,20 @@ h3 .superscript {
     h4 {
       margin: 0.4rem 0 0.2rem;
     }
+
     a.phone-number {
       font-size: 1.2rem;
     }
+
     span {
       display: block;
       padding-bottom: 0.3rem;
     }
+
     .northern-monk-logo {
       max-width: 5em;
     }
+
     iframe {
       min-height: 450px;
       width: 600px;
@@ -301,8 +307,14 @@ h3 .superscript {
       width: 200px;
     }
 
+    form {
+      input {
+        width: 300px;
+      }
+    }
+
     .drop-container,
-    p {
+    h3.superscript {
       display: none;
     }
   }
@@ -310,11 +322,14 @@ h3 .superscript {
   .images-container {
     display: grid;
     grid-template-columns: 1fr;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.3rem;
 
     img {
       height: auto;
-      border: 2px solid red;
-      margin: 0.3rem;
+      display: flex;
+      align-self: center;
+      margin: 0;
     }
   }
 }

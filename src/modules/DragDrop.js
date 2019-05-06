@@ -33,7 +33,7 @@ export default function DragDrop() {
       onDrop={drop}
       onDragEnter={enter}
       onDragLeave={leave}>
-      <p>Drag and drop image here</p>
+      <p>Drag and drop images to upload</p>
     </div>
   )
 }
