@@ -48,7 +48,8 @@
         <option>RSVP for 4 Guests</option>
       </select>
 
-      <form id="rsvp" name="rsvp" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+      <form id="rsvp" name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+        action="./rsvp/sent.html">
         <p class="bot-field">
           <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
         </p>
