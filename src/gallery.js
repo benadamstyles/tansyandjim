@@ -11,9 +11,7 @@ function OrText() {
 }
 
 function DragDrop() {
-  var [dragHoverClassName, setDragClassNameFunction] = React.useState(
-    'no-drag-hover'
-  )
+  var [isHovering, setHoveringStateFunction] = React.useState(false)
 
   function drag(event) {
     event.preventDefault()
@@ -21,23 +19,25 @@ function DragDrop() {
 
   function drop(event) {
     event.preventDefault()
-    setDragClassNameFunction('no-drag-hover')
+    setHoveringStateFunction(false)
     console.log(event.dataTransfer.files)
   }
 
   function enter(event) {
     event.preventDefault()
-    setDragClassNameFunction('drag-hover')
+    setHoveringStateFunction(true)
   }
 
   function leave(event) {
     event.preventDefault()
-    setDragClassNameFunction('no-drag-hover')
+    setHoveringStateFunction(false)
   }
+
+  var className = 'drop-container ' + (isHovering ? 'drag-hover' : '')
 
   return (
     <div
-      className={'drop-container ' + dragHoverClassName}
+      className={className}
       onDragOver={drag}
       onDrop={drop}
       onDragEnter={enter}
