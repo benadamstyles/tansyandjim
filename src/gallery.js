@@ -23,20 +23,22 @@ function SeparatorLine() {
   return <hr />
 }
 
-function Image() {
-  return <img src="" alt="" />
+function Image(props) {
+  return <img src={props.src} alt="Wedding Photo" />
 }
 
 function ImagesContainer() {
   var [imageUrls, setImageUrls] = React.useState([])
 
-  retrieve().then(setImageUrls)
+  retrieve().then(function(urls) {
+    setImageUrls(urls)
+  })
 
   return (
     <section>
       <div className="images-container">
         {imageUrls.map(function(url) {
-          return <img key={url} src={url} />
+          return <Image key={url} src={url} />
         })}
       </div>
     </section>

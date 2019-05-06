@@ -17,10 +17,10 @@ var storage = firebase
   .ref()
   .child('gallery')
 
-var gallery = firebase.firestore().collection('gallery')
+var database = firebase.firestore().collection('gallery')
 
 export function retrieve() {
-  return gallery.get().then(function(querySnapshot) {
+  return database.get().then(function(querySnapshot) {
     return Promise.all(
       querySnapshot.docs
         .map(function(docSnapshot) {
@@ -35,5 +35,6 @@ export function retrieve() {
 export function upload(files) {
   Array.from(files).forEach(function(file) {
     storage.child(file.name).put(file, {contentType: file.type})
+    database.add({name: file.name})
   })
 }
