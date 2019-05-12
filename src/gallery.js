@@ -2,18 +2,28 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import DragDrop from './modules/DragDrop'
 import UploadButton from './modules/UploadButton'
+import LoginForm from './modules/LoginForm'
 import {useRemoteImages} from './modules/upload'
+import {useLogin} from './modules/login'
 
 function OrText() {
   return <h3 className="superscript">Or</h3>
 }
 
 function UploadContainer() {
+  var {loggedIn, login} = useLogin()
+
   return (
     <section className="upload-container">
-      <UploadButton />
-      <OrText />
-      <DragDrop />
+      {loggedIn ? (
+        <>
+          <UploadButton />
+          <OrText />
+          <DragDrop />
+        </>
+      ) : (
+        <LoginForm login={login} />
+      )}
     </section>
   )
 }

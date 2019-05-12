@@ -7,5 +7,8 @@ export function useLogin() {
     setLoggedInStatus(true)
   }
 
-  return {loggedIn, login}
+  return {
+    loggedIn: loggedIn,
+    login: login,
+  }
 }
