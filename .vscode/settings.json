@@ -1,4 +1,5 @@
 {
+  "javascript.validate.enable": true,
   "files.associations": {
     ".posthtmlrc": "json",
     ".htmlnanorc": "json"
