@@ -11,11 +11,11 @@ function OrText() {
 }
 
 function UploadContainer() {
-  var {loggedIn, login} = useLogin()
+  var [isLoggedIn, login] = useLogin()
 
   return (
     <section className="upload-container">
-      {loggedIn ? (
+      {isLoggedIn ? (
         <>
           <UploadButton />
           <OrText />
