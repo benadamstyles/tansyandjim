@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react'
 import firebase from 'firebase/app'
 import 'firebase/storage'
 import 'firebase/firestore'
@@ -19,7 +20,7 @@ var storage = firebase
 
 var database = firebase.firestore().collection('gallery')
 
-export function retrieve() {
+function retrieve() {
   return database.get().then(function(querySnapshot) {
     return Promise.all(
       querySnapshot.docs
@@ -32,6 +33,19 @@ export function retrieve() {
     )
   })
 }
+
+export function useRemoteImages() {
+  var [imageUrls, setImageUrls] = useState([])
+
+  useEffect(() => {
+    retrieve().then(function(urls) {
+      setImageUrls(urls)
+    })
+  }, [])
+
+  return imageUrls
+}
+
 export function upload(files) {
   Array.from(files).forEach(function(file) {
     storage.child(file.name).put(file, {contentType: file.type})

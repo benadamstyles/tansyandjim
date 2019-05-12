@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import DragDrop from './modules/DragDrop'
 import UploadButton from './modules/UploadButton'
-import {retrieve} from './modules/upload'
+import {useRemoteImages} from './modules/upload'
 
 function OrText() {
   return <h3 className="superscript">Or</h3>
@@ -28,11 +28,7 @@ function Image(props) {
 }
 
 function ImagesContainer() {
-  var [imageUrls, setImageUrls] = React.useState([])
-
-  retrieve().then(function(urls) {
-    setImageUrls(urls)
-  })
+  var imageUrls = useRemoteImages()
 
   return (
     <section>
