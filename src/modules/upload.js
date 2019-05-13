@@ -35,8 +35,14 @@ export function useRemoteImages() {
 }
 
 export function upload(files) {
-  Array.from(files).forEach(function(file) {
-    storage.child(file.name).put(file, {contentType: file.type})
-    database.add({name: file.name})
+  Promise.all(
+    Array.from(files).map(function(file) {
+      return Promise.all([
+        storage.child(file.name).put(file, {contentType: file.type}),
+        database.add({name: file.name}),
+      ])
+    })
+  ).then(function() {
+    window.location.reload()
   })
 }
