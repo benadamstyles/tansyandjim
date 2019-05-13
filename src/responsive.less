@@ -13,6 +13,13 @@
     font-size: 2.5rem;
     letter-spacing: 1.05rem;
   }
+
+  #gallery-app {
+    form,
+    input {
+      width: 300px;
+    }
+  }
 }
 
 @media screen and (min-width: 500px) {
@@ -111,8 +118,14 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   #gallery-app .images-container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  #gallery-app .images-container {
+    padding: 0 5rem;
   }
 }
