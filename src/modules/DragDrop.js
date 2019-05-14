@@ -1,8 +1,9 @@
 import React from 'react'
-import {upload} from './upload'
+import {useUpload} from './upload'
 
 export default function DragDrop() {
   var [isHovering, setHoveringStateFunction] = React.useState(false)
+  var {error, uploadProgress, upload} = useUpload()
 
   function drag(event) {
     event.preventDefault()
@@ -34,6 +35,10 @@ export default function DragDrop() {
       onDragEnter={enter}
       onDragLeave={leave}>
       <p>Drag and drop images to upload</p>
+      {error && <p>{String(error)}</p>}
+      {uploadProgress > 0 && (
+        <p>{Math.round(uploadProgress * 100)}% uploaded</p>
+      )}
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useCallback} from 'react'
 import firebase from './firebase'
 
 var storage = firebase
@@ -28,11 +28,53 @@ export function useRemoteImages() {
   return imageUrls
 }
 
-export function upload(files) {
-  Array.from(files).map(file =>
-    storage
-      .child(file.name)
-      .put(file, {contentType: file.type})
-      .then(() => database.add({name: file.name}))
+var updateProgressReducer = (index, progress) => progresses =>
+  progresses.map((prev, i) => (i === index ? progress : prev))
+
+export function useUpload() {
+  var [uploadProgresses, setUploadProgresses] = useState([0])
+  var [error, setError] = useState(null)
+
+  function initProgresses(count) {
+    setUploadProgresses(Array(count).fill(0))
+  }
+
+  var upload = useCallback(
+    function(files) {
+      var filesArr = Array.from(files)
+
+      initProgresses(filesArr.length)
+
+      filesArr.map((file, index) =>
+        storage
+          .child(file.name)
+          .put(file, {contentType: file.type})
+          .on(firebase.storage.TaskEvent.STATE_CHANGED, {
+            next: snapshot =>
+              setUploadProgresses(
+                updateProgressReducer(
+                  index,
+                  snapshot.bytesTransferred / snapshot.totalBytes
+                )
+              ),
+            error: err => {
+              console.error(err)
+              setError(err)
+            },
+            complete: () => database.add({name: file.name}),
+          })
+      )
+    },
+    [setUploadProgresses, setError, storage, database]
   )
+
+  return {
+    error,
+
+    uploadProgress:
+      uploadProgresses.reduce((total, next) => total + next, 0) /
+      uploadProgresses.length,
+
+    upload,
+  }
 }
