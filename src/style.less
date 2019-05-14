@@ -6,14 +6,15 @@ header {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  min-height: 300px;
-  padding: 1.8rem 0.8rem 1.6rem;
+  min-height: 325px;
+  padding: 1.8rem 0 1.6rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
   &.landing-bg {
     background-image: url('./images/landing-bg-ALT.jpg');
+    opacity: 0.9;
   }
 
   &.the-day-bg {
@@ -22,10 +23,20 @@ header {
 
   &.travel-accommodation-bg {
     background-image: url('./images/travel-accommodation-bg.jpg');
+
+    h1.smaller {
+      font-size: 1.55rem;
+      letter-spacing: 0.9rem;
+      padding-left: 0.6rem;
+    }
+  }
+
+  &.gallery-bg {
+    background-image: url('./images/gallery.jpg');
   }
 
   h1 {
-    padding-left: 1.2rem;
+    padding-left: 0.8rem;
 
     &.superscript {
       padding-left: 0;
@@ -33,10 +44,12 @@ header {
   }
 
   .details {
-    padding-top: 1.5rem;
+    padding: 1.5rem 0.5rem 0;
 
     h2 {
       font-size: 1.6rem;
+      color: #ef8f0c;
+      .legibility-shadow;
     }
   }
 }
@@ -225,6 +238,7 @@ h3 .superscript {
       label {
         display: inline-block;
       }
+
       .dietary-text-field {
         opacity: 0;
         height: 0;
@@ -233,6 +247,7 @@ h3 .superscript {
         transition: 0.5s;
         transition-property: opacity, padding;
       }
+
       input[type='checkbox']:checked ~ .dietary-text-field {
         opacity: 1;
         height: auto;
@@ -277,16 +292,20 @@ h3 .superscript {
     h4 {
       margin: 0.4rem 0 0.2rem;
     }
+
     a.phone-number {
       font-size: 1.2rem;
     }
+
     span {
       display: block;
       padding-bottom: 0.3rem;
     }
+
     .northern-monk-logo {
       max-width: 5em;
     }
+
     iframe {
       min-height: 450px;
       width: 600px;
@@ -311,6 +330,37 @@ h3 .superscript {
 
     button {
       padding: 0.8rem 0.8rem 0.8rem 1.2rem;
+    }
+  }
+}
+
+#gallery-app {
+  .upload-container {
+    button {
+      width: 200px;
+    }
+
+    #gallery-password p {
+      margin: 0 0 2rem 0;
+    }
+
+    .drop-container,
+    h3.superscript {
+      display: none;
+    }
+  }
+
+  .images-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.3rem;
+
+    img {
+      height: auto;
+      display: flex;
+      align-self: center;
+      margin: 0;
     }
   }
 }

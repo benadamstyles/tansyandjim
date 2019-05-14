@@ -1,7 +1,46 @@
 @import './variables.less';
 @import './mixins.less';
 
+@media screen and (min-width: 375px) {
+  header {
+    padding: 1.8rem 0.8rem 1.6rem;
+
+    &.travel-accommodation-bg h1.smaller {
+      font-size: 2.4rem;
+      letter-spacing: 0.8rem;
+    }
+  }
+}
+
+@media screen and (min-width: 425px) {
+  header.travel-accommodation-bg h1.smaller {
+    font-size: 2.5rem;
+    letter-spacing: 1.05rem;
+  }
+
+  #gallery-app {
+    form,
+    input {
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  header.travel-accommodation-bg h1.smaller {
+    font-size: 2.6rem;
+    letter-spacing: 1.2rem;
+    padding-left: 1.2rem;
+  }
+}
+
 @media screen and (min-width: 768px) {
+  header.travel-accommodation-bg h1.smaller {
+    font-size: 2.6rem;
+    letter-spacing: 1.2rem;
+    padding-left: 1.2rem;
+  }
+
   .menu {
     flex-direction: row;
     justify-content: space-around;
@@ -17,9 +56,36 @@
       display: none;
     }
   }
+
+  #gallery-app {
+    .upload-container {
+      .drop-container {
+        display: flex;
+        width: 400px;
+        height: 200px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        border: 2px dotted @primary-select;
+      }
+
+      h3.superscript {
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .drag-hover {
+        background-color: @secondary;
+      }
+    }
+
+    .images-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 961px) {
   .menu {
     justify-content: center;
 
@@ -33,15 +99,33 @@
   .content {
     form {
       max-width: 480px;
-
-      input[type='checkbox'] {
-        height: 1rem;
-      }
     }
 
     iframe {
       width: 480px;
       height: 585px;
     }
+  }
+
+  #gallery-app {
+    .upload-container .drop-container {
+      width: 550px;
+    }
+
+    .images-container {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #gallery-app .images-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  #gallery-app .images-container {
+    padding: 0 5rem;
   }
 }
