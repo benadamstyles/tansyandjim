@@ -14,7 +14,7 @@ export function useRemoteImages() {
 
   useEffect(
     () =>
-      database.onSnapshot({
+      database.orderBy('createdAt').onSnapshot({
         next: querySnapshot => {
           Promise.all(
             querySnapshot.docs
@@ -23,7 +23,7 @@ export function useRemoteImages() {
           ).then(setImageUrls)
         },
       }),
-    [setImageUrls]
+    [setImageUrls, database, storage]
   )
 
   return imageUrls
@@ -45,6 +45,7 @@ export function useUpload() {
       filesArr.forEach((file, index) => {
         // @ts-ignore
         var name = random('Aa0', 5) + '-' + file.name
+        var createdAt = firebase.firestore.Timestamp.fromMillis(Date.now())
 
         var unsubscribe = storage
           .child(name)
@@ -63,7 +64,7 @@ export function useUpload() {
               unsubscribe()
             },
             complete: () => {
-              database.add({name})
+              database.add({name, createdAt})
               unsubscribe()
             },
           })
