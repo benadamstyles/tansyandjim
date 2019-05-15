@@ -1,4 +1,5 @@
 import {useState, useEffect, useCallback} from 'react'
+import random from 'randomatic'
 import firebase from './firebase'
 
 var storage = firebase
@@ -35,19 +36,18 @@ export function useUpload() {
   var [uploadProgresses, setUploadProgresses] = useState([0])
   var [error, setError] = useState(null)
 
-  function initProgresses(count) {
-    setUploadProgresses(Array(count).fill(0))
-  }
-
   var upload = useCallback(
     function(files) {
       var filesArr = Array.from(files)
 
-      initProgresses(filesArr.length)
+      setUploadProgresses(Array(filesArr.length).fill(0))
 
-      filesArr.map((file, index) =>
-        storage
-          .child(file.name)
+      filesArr.forEach((file, index) => {
+        // @ts-ignore
+        var name = random('Aa0', 5) + '-' + file.name
+
+        var unsubscribe = storage
+          .child(name)
           .put(file, {contentType: file.type})
           .on(firebase.storage.TaskEvent.STATE_CHANGED, {
             next: snapshot =>
@@ -60,10 +60,14 @@ export function useUpload() {
             error: err => {
               console.error(err)
               setError(err)
+              unsubscribe()
             },
-            complete: () => database.add({name: file.name}),
+            complete: () => {
+              database.add({name})
+              unsubscribe()
+            },
           })
-      )
+      })
     },
     [setUploadProgresses, setError, storage, database]
   )
