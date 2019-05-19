@@ -13,7 +13,7 @@ header {
   background-size: cover;
 
   &.landing-bg {
-    background-image: url('./images/landing-bg-ALT.jpg');
+    background-image: url('./images/landing-bg.jpg');
     opacity: 0.9;
   }
 
@@ -48,7 +48,7 @@ header {
 
     h2 {
       font-size: 1.6rem;
-      color: #ef8f0c;
+      color: @header;
       .legibility-shadow;
     }
   }
@@ -100,11 +100,11 @@ footer {
     width: auto;
     margin: 0 auto;
     padding: 0.4rem 2rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 2;
 
     &.active {
-      color: @primary-select;
+      color: @active-link;
     }
 
     &:focus {
