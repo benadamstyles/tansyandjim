@@ -14,8 +14,8 @@
 
 @media screen and (min-width: 425px) {
   header.travel-accommodation-bg h1.smaller {
-    font-size: 2.5rem;
-    letter-spacing: 1.05rem;
+    font-size: 2.3rem;
+    letter-spacing: 1rem;
   }
 
   #gallery-app {
@@ -108,13 +108,19 @@
     }
   }
 
-  #gallery-app {
-    .upload-container .drop-container {
-      width: 550px;
+  #gallery {
+    header.gallery-bg {
+      background-image: url('./images/gallery-large-device.jpg');
     }
 
-    .images-container {
-      grid-template-columns: 1fr 1fr 1fr;
+    #gallery-app {
+      .upload-container .drop-container {
+        width: 550px;
+      }
+
+      .images-container {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
     }
   }
 }
