@@ -1,4 +1,5 @@
 @import './variables.less';
+@import './keyframes.less';
 
 .header-text() {
   margin: 1rem 0;
@@ -14,4 +15,8 @@
 
 .legibility-shadow() {
   text-shadow: 1px 1px 1px white;
+}
+
+.transform-animation(@name, @duration: 1s) {
+  animation: @name @duration;
 }
