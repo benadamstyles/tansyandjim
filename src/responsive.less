@@ -57,6 +57,10 @@
     }
   }
 
+  .content {
+    padding: 0.5rem 2.4rem;
+  }
+
   #gallery-app {
     .upload-container {
       .drop-container {
@@ -98,6 +102,8 @@
 
 @media screen and (min-width: 1024px) {
   .content {
+    padding: 0.5rem 10rem;
+
     form {
       max-width: 480px;
     }
@@ -108,15 +114,21 @@
     }
   }
 
-  #the-day {
-    header.the-day-bg {
-      background-image: url('./images/the-day-bg.jpg');
-    }
+  #the-day header.the-day-bg {
+    background-image: url('./images/the-day-bg.jpg');
+  }
+
+  #gifts header.gifts-bg {
+    background-image: url('./images/gifts-large-device.jpg');
   }
 
   #gallery {
     header.gallery-bg {
       background-image: url('./images/gallery-large-device.jpg');
+    }
+
+    .content {
+      padding: 0.5rem 2.4rem;
     }
 
     #gallery-app {
